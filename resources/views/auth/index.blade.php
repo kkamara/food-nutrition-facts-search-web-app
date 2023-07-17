@@ -45,6 +45,14 @@
             />
           </div>
 
+          <div class='form-group'>
+            <label for='rememberToken'>Remember me</label>
+            <input 
+              type='checkbox' 
+              name='rememberToken'
+            />
+          </div>
+
           <div class='form-group submitBtnContainer'>
             <input 
               type='submit'
