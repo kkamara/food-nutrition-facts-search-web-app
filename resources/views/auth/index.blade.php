@@ -21,7 +21,7 @@
       <div class='col-md-6'>
         <h3 class='login-header'>Login</h3>
 
-        <form class='submitForm'>
+        <form class='submitForm loginForm'>
           <div class='form-group'>
             <label for='email'>Email:</label>
             <input 
@@ -63,6 +63,48 @@
       </div>
       <div class='col-md-6'>
         <h3 class='signup-header'>Signup</h3>
+
+        <form class='submitForm signUpForm'>
+          <div class='form-group'>
+            <label for='email'>Email:</label>
+            <input 
+              type='text'
+              name='email'
+              class='form-control is-invalid'
+              placeholder='Email Address'
+            />
+            <div class="invalid-feedback">
+              Invalid username and password combination.
+            </div>
+          </div>
+
+          <div class='form-group'>
+            <label for='password'>Password:</label>
+            <input 
+              type='password'
+              name='password'
+              class='form-control'
+              placeholder='Password'
+            />
+          </div>
+
+          <div class='form-group'>
+            <label for='password_confirmation'>Password Confirmation:</label>
+            <input 
+              type='password'
+              name='password_confirmation'
+              class='form-control'
+              placeholder='Password Confirmation'
+            />
+          </div>
+
+          <div class='form-group submitBtnContainer'>
+            <input 
+              type='submit'
+              class='submitBtn form-control btn btn-primary btn-sm'
+            />
+          </div>
+        </form>
       </div>
     </div>
   </div>

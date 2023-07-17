@@ -19,9 +19,6 @@ class User extends Authenticatable
      * @property Array
      */
     protected $fillable = [
-        'slug',
-        'first_name',
-        'last_name',
         'email',
         'password',
     ];
