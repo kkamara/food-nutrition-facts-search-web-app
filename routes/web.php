@@ -36,7 +36,7 @@ Route::get('/email', function () {
 });
 
 Route::get('/', function() {
-    return response()->json(['Message' => 'Success']);
+    return view('layouts/main', ['title' => 'Home',]);
 });
 
 Route::fallback(function() {
