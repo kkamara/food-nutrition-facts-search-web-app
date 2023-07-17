@@ -72,7 +72,7 @@ class LoginController extends Controller
         }
         $user->updated_at = Carbon::now();
         $user->save();
-        Auth::login($user);
+        Auth::login($user, $rememberToken);
         $request->session()->regenerate();
         
         return redirect()->home();
