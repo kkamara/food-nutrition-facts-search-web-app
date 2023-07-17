@@ -27,9 +27,12 @@
             <input 
               type='text'
               name='email'
-              class='form-control'
+              class='form-control is-invalid'
               placeholder='Email Address'
             />
+            <div class="invalid-feedback">
+              Invalid username and password combination.
+            </div>
           </div>
 
           <div class='form-group'>
