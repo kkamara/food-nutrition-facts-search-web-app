@@ -42,11 +42,11 @@ class FoodNutritionController extends Controller
      * Display the specified resource.
      *
      * @param  \App\Models\FoodNutrition  $foodNutrition
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\Response|array<string>
      */
     public function show(FoodNutrition $foodNutrition)
     {
-        //
+        return ['message' => 'Success'];
     }
 
     /**

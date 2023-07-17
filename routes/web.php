@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FoodNutritionController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Log;
@@ -37,6 +38,11 @@ Route::get('/email', function () {
 });
 
 Route::get('/', [HomeController::class, 'index']);
+
+Route::get(
+    '/foodnutrition/{foodNutrition}', [FoodNutritionController::class, 'show']
+)
+    ->name('foodNutritionFactPage');
 
 Route::fallback(function() {
     return abort(404);

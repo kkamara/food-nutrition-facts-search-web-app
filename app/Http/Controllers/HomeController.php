@@ -3,9 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\FoodNutrition;
 
 class HomeController extends Controller
 {
+    protected FoodNutrition $foodNutrition;
+
+    public function __construct() {
+        $this->foodNutrition = new FoodNutrition();
+    }
+
     /**
      * Show the homepage.
      * @param \Illuminate\Http\Request $request
@@ -13,6 +20,7 @@ class HomeController extends Controller
      */
     public function index(Request $request) {
         $title = 'Home';
-        return view('home', compact('title'));
+        $facts = $this->foodNutrition->inRandomOrder()->limit(5)->get();
+        return view('home', compact('title', 'facts'));
     }
 }
