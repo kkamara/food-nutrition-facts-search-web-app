@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\FoodNutritionController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
@@ -9,7 +10,7 @@ use Illuminate\Support\Facades\Mail;
 use App\Jobs\TestJob;
 use App\Http\Controllers\Web\UserController;
 
-
+/*
 Route::prefix('web')->group(function() {
     // Add single page app api routes
     Route::prefix('/user')->group(function () {
@@ -36,8 +37,10 @@ Route::get('/email', function () {
     Mail::to('recipient@localhost')->send($email);
     return $email;
 });
+*/
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/auth', [LoginController::class, 'index'])->name('login');
 
 Route::get(
     '/foodnutrition/{foodNutrition}', [FoodNutritionController::class, 'show']
