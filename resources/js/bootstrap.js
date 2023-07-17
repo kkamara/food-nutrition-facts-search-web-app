@@ -1,1 +1,3 @@
-require('./index.js')
+require('jquery')
+require('@popperjs/core')
+require('bootstrap')
