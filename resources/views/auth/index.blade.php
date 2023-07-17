@@ -28,13 +28,15 @@
             <input 
               type='text'
               name='email'
-              class='form-control is-invalid'
+              class="form-control @if(null !== session('login.errors') && isset(session('login.errors')['email'])) is-invalid @endif"
               placeholder='Email Address'
               value="{{ old('email') }}"
             />
+            @if(null !== session('login.errors') && isset(session('login.errors')['email']))
             <div class="invalid-feedback">
-              Invalid username and password combination.
+              {{ session('login.errors')['email'] }}
             </div>
+            @endif
           </div>
 
           <div class='form-group'>
@@ -42,9 +44,14 @@
             <input 
               type='password'
               name='password'
-              class='form-control'
+              class="form-control @if(null !== session('login.errors') && isset(session('login.errors')['password'])) is-invalid @endif"
               placeholder='Password'
             />
+            @if(null !== session('login.errors') && isset(session('login.errors')['password']))
+            <div class="invalid-feedback">
+              {{ session('login.errors')['password'] }}
+            </div>
+            @endif
           </div>
 
           <div class='form-group'>
@@ -74,13 +81,15 @@
             <input 
               type='text'
               name='email'
-              class='form-control is-invalid'
+              class="form-control @if(null !== session('register.errors') && isset(session('register.errors')['email'])) is-invalid @endif"
               placeholder='Email Address'
               value="{{ old('email') }}"
             />
+            @if(null !== session('register.errors') && isset(session('register.errors')['email']))
             <div class="invalid-feedback">
-              Invalid username and password combination.
+              {{ session('register.errors')['email'] }}
             </div>
+            @endif
           </div>
 
           <div class='form-group'>
@@ -88,10 +97,15 @@
             <input 
               type='password'
               name='password'
-              class='form-control'
+              class="form-control @if(null !== session('register.errors') && isset(session('register.errors')['password'])) is-invalid @endif"
               placeholder='Password'
               value="{{ old('password') }}"
             />
+            @if(null !== session('register.errors') && isset(session('register.errors')['password']))
+            <div class="invalid-feedback">
+              {{ session('register.errors')['password'] }}
+            </div>
+            @endif
           </div>
 
           <div class='form-group'>
@@ -99,9 +113,14 @@
             <input 
               type='password'
               name='password_confirmation'
-              class='form-control'
+              class="form-control @if(null !== session('register.errors') && isset(session('register.errors')['password_confirmation'])) is-invalid @endif"
               placeholder='Password Confirmation'
             />
+            @if(null !== session('register.errors') && isset(session('register.errors')['password_confirmation']))
+            <div class="invalid-feedback">
+              {{ session('register.errors')['password_confirmation'] }}
+            </div>
+            @endif
           </div>
 
           <div class='form-group submitBtnContainer'>
