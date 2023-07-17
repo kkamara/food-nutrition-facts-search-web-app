@@ -20,4 +20,13 @@ class LoginController extends Controller
         $title = 'Login & Signup';
         return view('auth/index', compact('title'));
     }
+
+    /**
+     * Show the auth homepage.
+     * @param \Illuminate\Http\Request $request
+     * @return \Illuminate\Http\Response|array<string>
+     */
+    public function loginAction(Request $request) {
+        return ['message' => 'Success',];
+    }
 }

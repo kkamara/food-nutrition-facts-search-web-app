@@ -21,7 +21,8 @@
       <div class='col-md-6'>
         <h3 class='login-header'>Login</h3>
 
-        <form class='submitForm loginForm'>
+        <form class='submitForm loginForm' method="POST" action="{{ route('loginAction') }}">
+          @csrf
           <div class='form-group'>
             <label for='email'>Email:</label>
             <input 
@@ -29,6 +30,7 @@
               name='email'
               class='form-control is-invalid'
               placeholder='Email Address'
+              value="{{ old('email') }}"
             />
             <div class="invalid-feedback">
               Invalid username and password combination.
@@ -50,6 +52,7 @@
             <input 
               type='checkbox' 
               name='rememberToken'
+              value="{{ old('rememberToken') }}"
             />
           </div>
 
@@ -64,7 +67,8 @@
       <div class='col-md-6'>
         <h3 class='signup-header'>Signup</h3>
 
-        <form class='submitForm signUpForm'>
+        <form class='submitForm signUpForm' method="POST" action="{{ route('registerAction') }}">
+          @csrf
           <div class='form-group'>
             <label for='email'>Email:</label>
             <input 
@@ -72,6 +76,7 @@
               name='email'
               class='form-control is-invalid'
               placeholder='Email Address'
+              value="{{ old('email') }}"
             />
             <div class="invalid-feedback">
               Invalid username and password combination.
@@ -85,6 +90,7 @@
               name='password'
               class='form-control'
               placeholder='Password'
+              value="{{ old('password') }}"
             />
           </div>
 
