@@ -110,3 +110,7 @@
   </div>
 
 @stop
+
+@section('scripts')
+    <script src="{{ asset('/js/auth.js') }}"></script>
+@endsection

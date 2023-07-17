@@ -1,3 +1,4 @@
 {
-    "/js/bootstrap.js": "/js/bootstrap.js"
+    "/js/bootstrap.js": "/js/bootstrap.js",
+    "/js/auth.js": "/js/auth.js"
 }

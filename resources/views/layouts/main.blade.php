@@ -196,6 +196,8 @@
   <!-- Template Main JS File -->
   <script src="{{ asset('theme/js/main.js') }}"></script>
 
+  @section('scripts') @show
+
 </body>
 
 </html>
