@@ -67,7 +67,7 @@ class LoginController extends Controller
         $user = $this->user->where('email', 'like', '%'.$input['email'].'%')->first();
         if (null === $user) {
             $errors = [];
-            $errors['email'] = "The email field doesn't exist. Please sign up.";
+            $errors['email'] = "The email field doesn't exist in our records. Please sign up.";
             return redirect()->back()->with(['login.errors' => $errors])->withInput();
         }
         
