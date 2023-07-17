@@ -76,7 +76,11 @@
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
 
-      <a href="#about" class="get-started-btn scrollto">Get Started</a>
+      @if(Auth::user())
+      <a href="#" class="get-started-btn scrollto">Logout</a>
+      @else
+      <a href="#" class="get-started-btn scrollto">Login or Signup</a>
+      @endif
 
     </div>
   </header><!-- End Header -->
