@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use App\Models\FoodNutrition;
 
 class User extends Authenticatable
 {
@@ -43,11 +44,17 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
+// $user->foodNutrition()->create(['food_nutrition_fact'=>'Healthy food is good'])
     /**
      * The attributes that shouldn't be overwritten.
      *
      * @property Array
      */
     protected $guarded = [];
+
+    public function foodNutrition() {
+        return $this->hasMany(
+            FoodNutrition::class, 'users_id'
+        );
+    }
 }

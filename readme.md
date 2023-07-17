@@ -6,6 +6,8 @@
 
 (17-Jul-2023).
 
+* [Code Snippet](#code-snippet)
+
 * [Installation](#installation)
 
 * [Usage](#usage)
@@ -25,6 +27,34 @@
 * [Contributing](#contributing)
 
 * [License](#license)
+
+## Code Snippet
+
+```bash
+php artisan tinker
+```
+
+```bash
+>>> $user=User::factory()->create(['email'=>'admin@mail.com']);
+=> App\Models\User {#4558
+     first_name: "Oran",
+     last_name: "Stracke",
+     email: "admin@mail.com",
+     #password: "$2y$10$IxQ3zIM6aANNvOjTzmZboOfa1wrpdFgByfqzbAQLKmsWvHTEK/Zky",
+     #remember_token: "RwXuuCJ856",
+     updated_at: "2023-07-17 12:54:50",
+     created_at: "2023-07-17 12:54:50",
+     id: 1,
+   }
+>>> $user->foodNutrition()->create(['food_nutrition_fact'=>'Healthy good is good']);
+=> App\Models\FoodNutrition {#4552
+     food_nutrition_fact: "Healthy good is good",
+     users_id: 1,
+     updated_at: "2023-07-17 12:55:24",
+     created_at: "2023-07-17 12:55:24",
+     id: 1,
+   }
+```
 
 ## Installation
 * [https://laravel.com/docs/9.x/installation](https://laravel.com/docs/9.x/installation)

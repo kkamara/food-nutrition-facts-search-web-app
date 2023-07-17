@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('food_nutrition', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('users_id')->constrained('users');
+            $table->string('food_nutrition_fact');
             $table->timestamps();
         });
     }
