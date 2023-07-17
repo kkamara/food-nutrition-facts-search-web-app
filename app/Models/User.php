@@ -54,4 +54,21 @@ class User extends Authenticatable
             FoodNutrition::class, 'users_id'
         );
     }
+
+    public function cleanInput($registerInput) {
+        $result = [];
+        if ($registerInput['email']) {
+            $result['email'] = filter_var(
+                $registerInput['email'],
+                FILTER_SANITIZE_STRING
+            );
+        }
+        if ($registerInput['password']) {
+            $result['password'] = $registerInput['password'];
+        }
+        if ($registerInput['password_confirmation']) {
+            $result['password_confirmation'] = $registerInput['password_confirmation'];
+        }
+        return $result;
+    }
 }

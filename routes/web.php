@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\SignupController;
 use App\Http\Controllers\FoodNutritionController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
