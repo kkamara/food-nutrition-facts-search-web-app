@@ -21,9 +21,7 @@
     <div class="container" id='app'>
         @include('layouts.flashes')
 
-        @section('content')
-
-        @show
+        @yield('content')
 
         @include('layouts.footer')
     </div>

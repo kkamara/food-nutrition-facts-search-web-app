@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Log;
 use App\Mail\Test as TestMail;
@@ -35,9 +36,7 @@ Route::get('/email', function () {
     return $email;
 });
 
-Route::get('/', function() {
-    return view('layouts/main', ['title' => 'Home',]);
-});
+Route::get('/', [HomeController::class, 'index']);
 
 Route::fallback(function() {
     return abort(404);
