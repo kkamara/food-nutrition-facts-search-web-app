@@ -6,6 +6,7 @@ use App\Mail\Test as TestMail;
 use Illuminate\Support\Facades\Mail;
 use App\Jobs\TestJob;
 use App\Http\Controllers\Web\UserController;
+use Illuminate\Http\Response;
 
 
 Route::prefix('web')->group(function() {
@@ -35,7 +36,9 @@ Route::get('/email', function () {
     return $email;
 });
 
-Route::view('/{path?}', 'layouts.app')->where('path', '.*');
+Route::get('/', function() {
+    return response()->json(['Message' => 'Success']);
+});
 
 Route::fallback(function() {
     return abort(404);
