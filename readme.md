@@ -1,6 +1,6 @@
 ![php-react-boilerplate.png](https://github.com/kkamara/useful/blob/main/php-react-boilerplate.png?raw=true)
 
-![lrb.png](https://github.com/kkamara/useful/raw/main/lrb.png)
+![food-nutrition-facts-search-web-app.png](https://github.com/kkamara/useful/raw/main/food-nutrition-facts-search-web-app.png)
 
 # Food Nutrition Facts Search Web App
 
@@ -108,19 +108,7 @@ The [mailhog](https://github.com/mailhog/MailHog) docker image runs at `http://l
 
 ## Misc
 
-[See todo app.](https://github.com/kkamara/todo-app)
-
-[See ecommerce web.](https://github.com/kkamara/ecommerce-web)
-
-[See city maps mobile.](https://github.com/kkamara/city-maps-mobile)
-
-[See ecommerce mobile.](https://github.com/kkamara/ecommerce-mobile)
-
-[See crm.](https://github.com/kkamara/crm)
-
-[See birthday currency.](https://github.com/kkamara/birthday-currency)
-
-[See php scraper.](https://github.com/kkamara/php-scraper)
+[See php react boilerplate.](https://github.com/kkamara/php-react-boilerplate)
 
 [See amazon scraper.](https://github.com/kkamara/amazon-scraper)
 
