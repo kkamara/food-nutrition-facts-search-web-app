@@ -70,6 +70,7 @@ class LoginController extends Controller
             $errors['email'] = "The email field doesn't exist. Please sign up.";
             return redirect()->back()->with(['login.errors' => $errors])->withInput();
         }
+        
         $user->updated_at = Carbon::now();
         $user->save();
         Auth::login($user, $rememberToken);
@@ -85,6 +86,7 @@ class LoginController extends Controller
      */
     public function logoutAction(Request $request) {
         Auth::logout();
+        $request->session()->invalidate();
         return redirect()->home();
     }
 }
