@@ -77,7 +77,7 @@
       </nav><!-- .navbar -->
 
       @if(Auth::user())
-      <a href="/logout" class="get-started-btn scrollto">Logout</a>
+      <a href="{{ route('logoutAction') }}" class="get-started-btn scrollto">Logout</a>
       @else
       <a href="{{ route('login') }}" class="get-started-btn scrollto">Login or Signup</a>
       @endif

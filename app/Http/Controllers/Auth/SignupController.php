@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
@@ -42,21 +43,21 @@ class SignupController extends Controller
                 $errors['password_confirmation'] = 'Missing password confirmation field.';
             }
 
-            return redirect()->back()->with(['register.errors' => $errors]);
+            return redirect()->back()->with(['register.errors' => $errors])->withInput();
         }
         $userExists = $this->user->where('email', $input['email'])->first();
         if (null !== $userExists) {
             $errors = [];
             $errors['email'] = 'The email field is already registered. Please login or contact system administrator.';
-            return redirect()->back()->with(['register.errors' => $errors]);
+            return redirect()->back()->with(['register.errors' => $errors])->withInput();
         }
         if ($input['password'] !== $input['password_confirmation']) {
             $errors = [];
             $errors['password_confirmation'] = 'The password confirmation field does not match the password field..';
-            return redirect()->back()->with(['register.errors' => $errors]);
+            return redirect()->back()->with(['register.errors' => $errors])->withInput();
         }
         $this->user->email = $input['email'];
-        $this->user->password = $input['password'];
+        $this->user->password = Hash::make($input['password']);
         $this->user->save();
         Auth::login($this->user);
         $request->session()->regenerate();
