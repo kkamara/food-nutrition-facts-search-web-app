@@ -57,6 +57,12 @@ class LoginController extends Controller
         if (null !== $request->input('rememberToken')) {
             $rememberToken = 1;
         }
+
+        /** 
+         * This line results in a redirect home if true is returned, 
+         * because of middleware setup in constructor. 
+         * @var bool $authAttempt
+         */
         $authAttempt = Auth::attempt(['email'=>$input['email'], 'password'=>$input['password']], $rememberToken);
         if (false !== $authAttempt) {
             $errors = [];
