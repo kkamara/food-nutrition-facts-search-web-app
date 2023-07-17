@@ -114,7 +114,7 @@ sail artisan queue:listen redis --queue stuff
 ## Unit Tests
 
 ```bash
-php artisan test --filter api
+php artisan test
 ```
 
 View the unit test code [here](https://raw.githubusercontent.com/kkamara/laravel-react-boilerplate/develop/tests/Unit/Api/UsersTest.php).
