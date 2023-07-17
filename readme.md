@@ -46,9 +46,9 @@ php artisan tinker
      created_at: "2023-07-17 12:54:50",
      id: 1,
    }
->>> $user->foodNutrition()->create(['food_nutrition_fact'=>'Healthy good is good']);
+>>> $user->foodNutrition()->create(['food_nutrition_fact'=>'Healthy food is good']);
 => App\Models\FoodNutrition {#4552
-     food_nutrition_fact: "Healthy good is good",
+     food_nutrition_fact: "Healthy food is good",
      users_id: 1,
      updated_at: "2023-07-17 12:55:24",
      created_at: "2023-07-17 12:55:24",
