@@ -6,7 +6,6 @@ use App\Mail\Test as TestMail;
 use Illuminate\Support\Facades\Mail;
 use App\Jobs\TestJob;
 use App\Http\Controllers\Web\UserController;
-use Illuminate\Http\Response;
 
 
 Route::prefix('web')->group(function() {
