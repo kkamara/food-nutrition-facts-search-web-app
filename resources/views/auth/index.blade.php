@@ -55,11 +55,11 @@
           </div>
 
           <div class='form-group'>
-            <label for='rememberToken'>Remember me</label>
+            <label for='remember'>Remember me</label>
             <input 
               type='checkbox' 
-              name='rememberToken'
-              value="{{ old('rememberToken') }}"
+              name='remember'
+              value="true"
             />
           </div>
 

@@ -53,17 +53,17 @@ class LoginController extends Controller
 
         $input['email'] = filter_var($input['email'], FILTER_SANITIZE_STRING);
 
-        $rememberToken = 0;
-        if (null !== $request->input('rememberToken')) {
-            $rememberToken = 1;
+        $remember = 0;
+        if ('true' === $request->input('remember')) {
+            $remember = 1;
         }
-
+        
         /** 
          * This line results in a redirect home if true is returned, 
          * because of middleware setup in constructor. 
          * @var bool $authAttempt
          */
-        $authAttempt = Auth::attempt(['email'=>$input['email'], 'password'=>$input['password']], $rememberToken);
+        $authAttempt = Auth::attempt(['email'=>$input['email'], 'password'=>$input['password']], $remember);
         if (false !== $authAttempt) {
             $errors = [];
             $errors['email'] = 'Invalid username and password combination. Please login or contact system administrator.';
@@ -79,7 +79,7 @@ class LoginController extends Controller
         
         $user->updated_at = Carbon::now();
         $user->save();
-        Auth::login($user, $rememberToken);
+        Auth::login($user, $remember);
         $request->session()->regenerate();
         
         return redirect()->home();
