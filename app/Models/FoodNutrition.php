@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 use GuzzleHttp\Client;
@@ -14,7 +15,7 @@ class FoodNutrition extends Model
     /**
      * The attributes that are mass assignable.
      *
-     * @property Array
+     * @property array $fillable
      */
     protected $fillable = ['food_nutrition_fact'];
 
@@ -38,13 +39,19 @@ class FoodNutrition extends Model
      * @return \Psr\Http\Message\StreamInterface
      */
     public function getFact($query) {
+        Log::debug(print_r(
+            config('app.radidApiHost'), true
+        ));
+        Log::debug(print_r(
+            config('app.radidApiKey'), true
+        ));
         $response = $this->client->request(
             'GET', 
             "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?query=$query",
             [
                 'headers' => [
-                    'X-RapidAPI-Host' => config('app.radidApi.host'),
-                    'X-RapidAPI-Key' => config('app.rapidApi.key'),
+                    'X-RapidAPI-Host' => config('app.radidApiHost'),
+                    'X-RapidAPI-Key' => config('app.rapidApiKey'),
                 ],
             ]
         );

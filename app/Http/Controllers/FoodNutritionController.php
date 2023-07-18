@@ -25,9 +25,9 @@ class FoodNutritionController extends Controller
      */
     public function store(Request $request)
     {
-        $fact = $this->foodNutrition->getFact($request->input('query'));
-        $fact = json_decode((string) $fact, true);
-        Log::debug(print_r($fact, true));
+        $fact = $this->foodNutrition->getFact($request->input('query')); # Send request to get fact.
+        $fact = json_decode((string) $fact, false); # Give me a class object.
+        Log::debug(print_r($fact, true)); # Log to log channel (default: storage/logs/laravel.log).
         return ['message' => 'Success'];
     }
 }

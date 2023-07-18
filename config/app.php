@@ -2,9 +2,9 @@
 
 return [
     
-    'rapidApi.host' => env('RAPID_API_HOST'),
+    'rapidApiHost' => env('RAPID_API_HOST'),
 
-    'rapidApi.key' => env('RAPID_API_KEY'),
+    'rapidApiKey' => env('RAPID_API_KEY'),
 
     /*
     |--------------------------------------------------------------------------
