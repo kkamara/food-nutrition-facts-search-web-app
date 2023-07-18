@@ -14,6 +14,9 @@
           font-weight: bold;
         }
       </style>
+      @if(null !== session('fact'))
+      <script>alert("{{ session('fact') }}");</script>
+      @endif
       @if(auth()->user())
       <form class="row find-a-fact" method='GET' action="{{ route('getFact') }}">
         @csrf

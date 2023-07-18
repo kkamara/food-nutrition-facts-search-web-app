@@ -19,15 +19,6 @@ class FoodNutrition extends Model
      */
     protected $fillable = ['food_nutrition_fact'];
 
-    /**
-     * @property Client $http
-     */
-    protected Client $http;
-
-    public function __construct() {
-        $this->client = new Client();
-    }
-
     public function user() {
         return $this->belongsTo(
             User::class, 'users_id'
@@ -39,13 +30,8 @@ class FoodNutrition extends Model
      * @return \Psr\Http\Message\StreamInterface
      */
     public function getFact($query) {
-        Log::debug(print_r(
-            config('app.radidApiHost'), true
-        ));
-        Log::debug(print_r(
-            config('app.radidApiKey'), true
-        ));
-        $response = $this->client->request(
+        $http = new Client();
+        $response = $http->request(
             'GET', 
             "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?query=$query",
             [
