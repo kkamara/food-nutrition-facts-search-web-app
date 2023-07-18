@@ -47,6 +47,8 @@ Route::post('/auth', [LoginController::class, 'loginAction'])->name('loginAction
 Route::post('/auth/register', [SignupController::class, 'registerAction'])->name('registerAction');
 Route::get('/auth/logout', [LoginController::class, 'logoutAction'])->name('logoutAction');
 
+Route::get('/facts', [FoodNutritionController::class, 'store'])->name('getFact');
+
 Route::get(
     '/foodnutrition/{foodNutrition}', [FoodNutritionController::class, 'show']
 )
