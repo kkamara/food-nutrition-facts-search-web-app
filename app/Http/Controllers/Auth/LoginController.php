@@ -57,6 +57,10 @@ class LoginController extends Controller
         if ('true' === $request->input('remember')) {
             $remember = 1;
         }
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        $request->session()->regenerate();
         
         /** 
          * This line results in a redirect home if true is returned, 
@@ -80,7 +84,6 @@ class LoginController extends Controller
         $user->updated_at = Carbon::now();
         $user->save();
         Auth::login($user, $remember);
-        $request->session()->regenerate();
         
         return redirect()->home();
     }
@@ -94,6 +97,7 @@ class LoginController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
+        $request->session()->regenerate();
         return redirect()->home();
     }
 }

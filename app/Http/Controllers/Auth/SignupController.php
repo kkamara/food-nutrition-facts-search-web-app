@@ -60,6 +60,8 @@ class SignupController extends Controller
         $this->user->password = Hash::make($input['password']);
         $this->user->save();
         Auth::login($this->user);
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
         $request->session()->regenerate();
         
         return redirect()->home();
