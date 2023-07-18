@@ -26,7 +26,8 @@ class FoodNutritionController extends Controller
     public function store(Request $request)
     {
         $fact = $this->foodNutrition->getFact($request->input('query'));
-        Log::debug(print_r((string) $fact, true));
+        $fact = json_decode((string) $fact, true);
+        Log::debug(print_r($fact, true));
         return ['message' => 'Success'];
     }
 }

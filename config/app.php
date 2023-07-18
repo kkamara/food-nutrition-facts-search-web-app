@@ -1,6 +1,11 @@
 <?php
 
 return [
+    
+    'rapidApi.host' => env('RAPID_API_HOST'),
+
+    'rapidApi.key' => env('RAPID_API_KEY'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Name

@@ -43,8 +43,8 @@ class FoodNutrition extends Model
             "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/complexSearch?query=$query",
             [
                 'headers' => [
-                    'X-RapidAPI-Host' => 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
-                    'X-RapidAPI-Key' => 'f339b4dde8msh3f3d5d13cd057dep151024jsneb855d176177',
+                    'X-RapidAPI-Host' => config('app.radidApi.host'),
+                    'X-RapidAPI-Key' => config('app.rapidApi.key'),
                 ],
             ]
         );
