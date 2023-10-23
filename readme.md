@@ -1,4 +1,4 @@
-![php-react-boilerplate.png](https://github.com/kkamara/useful/blob/main/php-react-boilerplate.png?raw=true)
+![php-reactjs-boilerplate.png](https://github.com/kkamara/useful/blob/main/php-reactjs-boilerplate.png?raw=true)
 
 ![food-nutrition-facts-search-web-app.png](https://github.com/kkamara/useful/raw/main/food-nutrition-facts-search-web-app.png)
 
