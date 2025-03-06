@@ -119,7 +119,7 @@ sail artisan queue:listen redis --queue stuff
 php artisan test
 ```
 
-View the unit test code [here](https://raw.githubusercontent.com/kkamara/laravel-react-boilerplate/develop/tests/Unit/Api/UsersTest.php).
+View the unit test code [here](https://raw.githubusercontent.com/kkamara/php-reactjs-boilerplate/main/tests/Feature/API/UserTest.php).
 
 ## Browser Tests
 
@@ -134,19 +134,17 @@ You can test the `/mail` endpoint to send a test mail you can then view at `:802
 
 ![docker-mailhog3.png](https://raw.githubusercontent.com/kkamara/useful/main/docker-mailhog3.png)
 
-Mail environment credentials are at [.env](https://raw.githubusercontent.com/kkamara/laravel-react-boilerplate/develop/.env.example).
+Mail environment credentials are at [.env](https://raw.githubusercontent.com/kkamara/php-reactjs-boilerplate/main/.env.example).
 
 The [mailhog](https://github.com/mailhog/MailHog) docker image runs at `http://localhost:8025`.
 
 ## Misc
 
-[See php react boilerplate.](https://github.com/kkamara/php-react-boilerplate)
+[See PHP ReactJS Boilerplate.](https://github.com/kkamara/php-reactjs-boilerplate)
 
-[See amazon scraper.](https://github.com/kkamara/amazon-scraper)
+[See Amazon Scraper.](https://github.com/kkamara/amazon-scraper)
 
-[See python amazon scraper 2.](https://github.com/kkamara/selenium-py)
-
-[See wordpress with docker support.](https://github.com/kkamara/wordpress)
+[See Python Amazon Scraper 2.](https://github.com/kkamara/python-selenium)
 
 The `Makefile` for this project contains useful commands for a Laravel application and can be found at [laravel-makefile](https://github.com/kkamara/laravel-makefile).
 
